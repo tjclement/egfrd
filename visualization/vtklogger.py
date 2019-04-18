@@ -502,7 +502,7 @@ class VTKLogger:
         if radius:
             radius_list.append(radius * 2 * factor)
 
-        if tensor != None:
+        if tensor is not None:
             tensor = tensor * 2 * factor
             tensor_list.append(tensor)
     

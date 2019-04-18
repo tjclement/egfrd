@@ -5,7 +5,7 @@ import vtk
 
 import random
 
-import datafile
+from datafile import load_header
 
 
 zoom = 1e6
@@ -15,7 +15,7 @@ class Particles:
         self.pos = numpy.array([[]])
         self.pos.shape = (0, 3)
         self.radii = numpy.array([])
-    
+
 
 colors = [(1, .2, .2),  (.2,.2,1), (.8, .8, .3)]
 
@@ -157,7 +157,7 @@ if __name__ == '__main__':
 
     for infile in infiles:
 
-        header = datafile.loadHeader(infile)
+        header = load_header(infile)
         print header
 
         particlePools = loadParticles(infile)
