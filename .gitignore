@@ -73,6 +73,7 @@ Makefile.in
 .libs
 .deps
 .*_history*
+.idea/*
 
 # Note sure why these are excluded (added by Morioshi)
 test/World_test
