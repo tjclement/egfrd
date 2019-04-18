@@ -58,7 +58,8 @@ def jnyn(n, resolution):
 
     for i, z in enumerate(z_table):
         j_table[i], jdot_table[i], y_table[i], ydot_table[i] \
-            = special.sph_jnyn(n, z)
+            = special.spherical_jn(n, z, False), special.spherical_jn(n, z, True), \
+              special.spherical_yn(n, z, False), special.spherical_yn(n, z, True)
 
     j_table = j_table.transpose()
     jdot_table = jdot_table.transpose()
