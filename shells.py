@@ -867,7 +867,7 @@ def get_dr_dzright_dzleft_to_CylindricalShape(shape, testShell, r, z_right, z_le
     # the newly calculated dr, dz_right, dz_left and the old r, z_right, z_left. The 'testShell'
     # therefore can only become smaller.
 
-    # Note that the neighboring 'shell' is querried from this domain earlier by the testShell.
+    # Note that the neighboring 'shell' is queried from this domain earlier by the testShell.
     # -> the shell MUST be a Cylinder.
     assert(type(shape) is Cylinder)
 
@@ -1299,7 +1299,8 @@ def get_dr_dzright_dzleft_to_CylindricalShape(shape, testShell, r, z_right, z_le
                         # We will take the square root of the following below
                         sqrt_arg = (x*tan_scale_angle)*(x*tan_scale_angle) - scale_center_to_shell_edge_x*scale_center_to_shell_edge_x
 
-                        if sqrt_arg < 0.0 and abs(sqrt_arg) <= TOLERANCE*scale_center_to_shell_edge_x*scale_center_to_shell_edge_x:
+                        # if sqrt_arg < 0.0 and abs(sqrt_arg) <= TOLERANCE*scale_center_to_shell_edge_x*scale_center_to_shell_edge_x:
+                        if sqrt_arg < 0.0:
 
                             sqrt_arg = 0.0      # This safety check is to prevent math domain errors
                                                 # in case sqrt_arg is close to zero and taking the
